@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">পিক্সেলরক্স এআই</string>
+    <string name="nav_home">হোম</string>
+    <string name="nav_chat">চ্যাট</string>
+    <string name="nav_voice">ভয়েস</string>
+    <string name="nav_prayer">নামাজ</string>
+    <string name="nav_tasks">টাস্ক</string>
+    <string name="nav_games">গেমস</string>
+    <string name="nav_settings">সেটিংস</string>
+
+    <string name="prayer_fajr">ফজর</string>
+    <string name="prayer_dhuhr">যোহর</string>
+    <string name="prayer_asr">আসর</string>
+    <string name="prayer_maghrib">মাগরিব</string>
+    <string name="prayer_isha">ইশা</string>
+    <string name="prayer_sunrise">সূর্যোদয়</string>
+    <string name="prayer_tahajjud">তাহাজ্জুদ</string>
+    <string name="prayer_sehri">সেহরির শেষ সময়</string>
+    <string name="prayer_iftar">ইফতারের সময়</string>
+    
+    <string name="can_pray_now">এখন কি নামাজ পড়া যাবে?</string>
+    <string name="allowed">নামাজ জায়েজ</string>
+    <string name="prohibited">মাকরূহ / নিষিদ্ধ সময়</string>
+    <string name="qibla_compass">কিবলা কম্পাস</string>
+    
+    <string name="game_ludo">লুডু</string>
+    <string name="game_roll_dice">ছক্কা রোল করুন</string>
+    <string name="game_select_mode">খেলোয়াড় সংখ্যা নির্বাচন</string>
+
+    <string name="news">খবর</string>
+    <string name="calculator">ক্যালকুলেটর</string>
+    <string name="unit_converter">একক রূপান্তরকারী</string>
+    <string name="islamic_tools">ইসলামিক টুলস</string>
+    <string name="tasbih">ডিজিটাল তাসবিহ</string>
+</resources>

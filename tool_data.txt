@@ -1,0 +1,113 @@
+TOOL|prod_tasks|Tasks|productivity|Screen.Tasks.route|IMPLEMENTED
+TOOL|prod_notes|Notes|productivity|Screen.Notes.route|IMPLEMENTED
+TOOL|prod_scanner|Scanner|productivity|Screen.BarcodeScanner.route|IMPLEMENTED
+TOOL|prod_pdf|PDF Reader|productivity|Screen.PdfReader.route|IMPLEMENTED
+TOOL|prod_downloads|Downloads|productivity|Screen.Downloads.route|IMPLEMENTED
+TOOL|prod_voice_notes|Voice Notes|productivity|Screen.VoiceNotes.route|IMPLEMENTED
+TOOL|prod_ai_files|AI File Assistant|productivity|Screen.AIFileAssistant.route|IMPLEMENTED
+TOOL|prod_clipboard|Clipboard History|productivity|null|COMING_SOON
+TOOL|prod_teleprompter|Teleprompter|productivity|null|COMING_SOON
+TOOL|prod_secure_notes|Secure Notes|productivity|null|COMING_SOON
+TOOL|prod_checklist|Daily Checklist|productivity|null|COMING_SOON
+TOOL|prod_habit|Simple Habit Counter|productivity|null|COMING_SOON
+TOOL|prod_pomodoro|Pomodoro Timer|productivity|null|COMING_SOON
+TOOL|media_image_text_editor|Image Text Remover & Editor|media_tools|null|COMING_SOON
+TOOL|media_compressor|Video Compressor|media_tools|Screen.VideoCompressor.route|IMPLEMENTED
+TOOL|media_gallery|Media Gallery|media_tools|Screen.MediaGallery.route|IMPLEMENTED
+TOOL|media_downloader|Video/Audio Downloader|media_tools|Screen.Downloads.route|IMPLEMENTED
+TOOL|media_ai_images|AI Image Tools|media_tools|Screen.AIImageTools.route|IMPLEMENTED
+TOOL|media_video_trim|Video Trimmer|media_tools|Screen.VideoTrimmer.route|IMPLEMENTED
+TOOL|media_video_audio|Video to Audio|media_tools|Screen.VideoToAudio.route|IMPLEMENTED
+TOOL|media_img_comp|Image Compressor|media_tools|Screen.ImageCompressor.route|IMPLEMENTED
+TOOL|media_photo_resize|Photo Resizer & Cropper|media_tools|null|COMING_SOON
+TOOL|media_image_ocr|Image to Text OCR|media_tools|null|COMING_SOON
+TOOL|media_audio_cut|Audio Cutter|media_tools|null|COMING_SOON
+TOOL|media_social_size|Social Media Size Maker|media_tools|null|COMING_SOON
+TOOL|media_watermark|Watermark Tool|media_tools|null|COMING_SOON
+TOOL|media_collage|Collage Maker|media_tools|null|COMING_SOON
+TOOL|media_quote_maker|Post & Quote Maker|media_tools|null|COMING_SOON
+TOOL|media_meme_maker|Meme Maker|media_tools|null|COMING_SOON
+TOOL|media_text_to_speech|Text to Speech|media_tools|null|COMING_SOON
+TOOL|media_color_picker|Color Picker|media_tools|null|COMING_SOON
+TOOL|media_palette_extractor|Palette Extractor|media_tools|null|COMING_SOON
+TOOL|media_image_rotate|Image Rotate & Flip|media_tools|null|COMING_SOON
+TOOL|media_image_convert|Image Format Converter|media_tools|null|COMING_SOON
+TOOL|media_batch_resize|Batch Image Resizer|media_tools|null|COMING_SOON
+TOOL|media_batch_watermark|Batch Watermark|media_tools|null|COMING_SOON
+TOOL|media_photo_grid|Photo Grid Maker|media_tools|null|COMING_SOON
+TOOL|media_pfp_maker|Profile Picture Maker|media_tools|null|COMING_SOON
+TOOL|media_thumbnail_maker|Thumbnail Maker|media_tools|null|COMING_SOON
+TOOL|media_story_canvas|Story & Reel Canvas|media_tools|null|COMING_SOON
+TOOL|media_video_mute|Video Mute Tool|media_tools|null|COMING_SOON
+TOOL|media_video_rotate|Video Rotate Tool|media_tools|null|COMING_SOON
+TOOL|media_video_crop|Video Crop Tool|media_tools|null|COMING_SOON
+TOOL|media_video_speed|Video Speed Control|media_tools|null|COMING_SOON
+TOOL|media_video_frame|Video Frame Extractor|media_tools|null|COMING_SOON
+TOOL|media_gif_maker|GIF Maker|media_tools|null|COMING_SOON
+TOOL|media_gif_to_video|GIF to Video|media_tools|null|COMING_SOON
+TOOL|media_audio_convert|Audio Format Converter|media_tools|null|COMING_SOON
+TOOL|media_audio_boost|Audio Volume Booster|media_tools|null|COMING_SOON
+TOOL|media_audio_merger|Audio Merger|media_tools|null|COMING_SOON
+TOOL|doc_pdf_text_editor|PDF Text Editor|doc_pdf|null|COMING_SOON
+TOOL|doc_scanned_pdf_text_editor|Scanned PDF Text Editor|doc_pdf|null|COMING_SOON
+TOOL|doc_image_to_pdf|Image to PDF|doc_pdf|null|COMING_SOON
+TOOL|doc_pdf_merge|PDF Merge|doc_pdf|null|COMING_SOON
+TOOL|doc_pdf_split|PDF Split|doc_pdf|null|COMING_SOON
+TOOL|doc_pdf_to_image|PDF to Image|doc_pdf|null|COMING_SOON
+TOOL|doc_pdf_reorder|PDF Page Reorder|doc_pdf|null|COMING_SOON
+TOOL|doc_pdf_rotate|PDF Page Rotate|doc_pdf|null|COMING_SOON
+TOOL|doc_pdf_extract_img|PDF Image Extractor|doc_pdf|null|COMING_SOON
+TOOL|doc_pdf_metadata|PDF Metadata Viewer|doc_pdf|null|COMING_SOON
+TOOL|doc_text_editor|Text File Viewer & Editor|doc_pdf|null|COMING_SOON
+TOOL|doc_signature|Signature Capture|doc_pdf|null|COMING_SOON
+TOOL|qr_wa_direct|WhatsApp Direct Message|qr_sharing|null|COMING_SOON
+TOOL|qr_generator|QR Code Generator|qr_sharing|null|COMING_SOON
+TOOL|qr_quick_share|Quick Share Hub|qr_sharing|null|COMING_SOON
+TOOL|qr_private_share|Private Share Prep|qr_sharing|null|COMING_SOON
+TOOL|qr_link_cleaner|Link Cleaner|qr_sharing|null|COMING_SOON
+TOOL|text_toolkit|Text Toolkit|text_dev|null|COMING_SOON
+TOOL|text_wa_format|WhatsApp Text Formatter|text_dev|null|COMING_SOON
+TOOL|text_json_format|JSON Formatter|text_dev|null|COMING_SOON
+TOOL|text_base64|Base64 Encoder / Decoder|text_dev|null|COMING_SOON
+TOOL|text_url_codec|URL Encoder / Decoder|text_dev|null|COMING_SOON
+TOOL|text_timestamp|Timestamp Converter|text_dev|null|COMING_SOON
+TOOL|text_uuid|UUID Generator|text_dev|null|COMING_SOON
+TOOL|text_regex|Regex Tester|text_dev|null|COMING_SOON
+TOOL|text_lorem_ipsum|Lorem Ipsum Generator|text_dev|null|COMING_SOON
+TOOL|text_deeplink|Deep Link Tester|text_dev|null|COMING_SOON
+TOOL|text_hash_gen|Hash Generator|text_dev|null|COMING_SOON
+TOOL|text_file_hash|File Hash Checker|text_dev|null|COMING_SOON
+TOOL|calc_age|Age Calculator|calculators|null|COMING_SOON
+TOOL|calc_date_diff|Date Difference Calculator|calculators|null|COMING_SOON
+TOOL|calc_percentage|Percentage Calculator|calculators|null|COMING_SOON
+TOOL|calc_discount|Discount Calculator|calculators|null|COMING_SOON
+TOOL|calc_emi|EMI / Loan Calculator|calculators|null|COMING_SOON
+TOOL|calc_data_storage|Data Storage Converter|calculators|null|COMING_SOON
+TOOL|calc_tip_splitter|Tip & Bill Splitter|calculators|null|COMING_SOON
+TOOL|sec_pass_gen|Password Generator|security_privacy|null|COMING_SOON
+TOOL|sec_pass_check|Password Strength Checker|security_privacy|null|COMING_SOON
+TOOL|sec_photo_metadata|Photo Metadata Remover|security_privacy|null|COMING_SOON
+TOOL|dev_screen_light|Screen Color Flashlight|device_utilities|null|COMING_SOON
+TOOL|dev_flashlight|Flashlight Utility|device_utilities|null|COMING_SOON
+TOOL|dev_stopwatch|Stopwatch|device_utilities|null|COMING_SOON
+TOOL|dev_countdown|Countdown Timer|device_utilities|null|COMING_SOON
+TOOL|dev_interval|Interval Timer|device_utilities|null|COMING_SOON
+TOOL|dev_random_picker|Random Picker|device_utilities|null|COMING_SOON
+TOOL|dev_decision_wheel|Decision Wheel|device_utilities|null|COMING_SOON
+TOOL|util_calc|Calculator|utilities|Screen.Calculator.route|IMPLEMENTED
+TOOL|util_conv|Unit Converter|utilities|Screen.Converter.route|IMPLEMENTED
+TOOL|util_weather|Weather|utilities|Screen.Weather.route|IMPLEMENTED
+TOOL|util_system|System Info|utilities|Screen.SystemDashboard.route|IMPLEMENTED
+TOOL|util_islamic|Islamic Hub|utilities|Screen.IslamicHub.route|IMPLEMENTED
+TOOL|util_prayer|Prayer Times|utilities|Screen.Prayer.route|IMPLEMENTED
+TOOL|util_tasbih|Tasbih Counter|utilities|Screen.Tasbih.route|IMPLEMENTED
+TOOL|biz_projects|Projects|business|Screen.Projects.route|IMPLEMENTED
+TOOL|biz_clients|Clients|business|Screen.Clients.route|IMPLEMENTED
+TOOL|biz_invoices|Invoices|business|Screen.Invoices.route|IMPLEMENTED
+TOOL|biz_websites|Websites|business|Screen.WebsiteManager.route|IMPLEMENTED
+TOOL|infra_vps|VPS Control|infrastructure|Screen.VpsControl.route|IMPLEMENTED
+TOOL|infra_docker|Docker Dashboard|infrastructure|Screen.DockerDashboard.route|IMPLEMENTED
+TOOL|infra_n8n|n8n Automation|infrastructure|Screen.N8nControl.route|IMPLEMENTED
+TOOL|infra_uptime|Uptime Monitor|infrastructure|Screen.UptimeControl.route|IMPLEMENTED
+TOOL|infra_backups|Backup Dashboard|infrastructure|Screen.BackupDashboard.route|IMPLEMENTED
+TOOL|infra_security|Security Center|infrastructure|Screen.SecurityCenter.route|IMPLEMENTED

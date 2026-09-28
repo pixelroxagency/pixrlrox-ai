@@ -1,0 +1,6 @@
+{
+  "name": "PixelRox AI",
+  "description": "PixelRox AI - Native AI assistant with direct providers, voice, tasks, prayer companion, downloader & utilities",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

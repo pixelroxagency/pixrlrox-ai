@@ -70,22 +70,34 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        com.example.core.firebase.FirebaseInitializer.configureAppCheck(this, intent)
-        handleIncomingIntent(intent)
+        try {
+            com.example.core.firebase.FirebaseInitializer.configureAppCheck(this, intent)
+        } catch (e: Throwable) {
+            android.util.Log.e("MainActivity", "Failed to configure AppCheck", e)
+        }
+        try {
+            handleIncomingIntent(intent)
+        } catch (e: Throwable) {
+            android.util.Log.e("MainActivity", "Failed to handle incoming intent", e)
+        }
 
         val app = application as PixelRoxApp
         val container = app.container
 
-        val vmProvider = ViewModelProvider(
-            this,
-            object : ViewModelProvider.Factory {
-                @Suppress("UNCHECKED_CAST")
-                override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    return MediaPlayerViewModel(app, container.mediaRepository) as T
+        try {
+            val vmProvider = ViewModelProvider(
+                this,
+                object : ViewModelProvider.Factory {
+                    @Suppress("UNCHECKED_CAST")
+                    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                        return MediaPlayerViewModel(app, container.mediaRepository) as T
+                    }
                 }
-            }
-        )
-        sharedMediaPlayerVm = vmProvider[MediaPlayerViewModel::class.java]
+            )
+            sharedMediaPlayerVm = vmProvider[MediaPlayerViewModel::class.java]
+        } catch (e: Throwable) {
+            android.util.Log.e("MainActivity", "Failed to initialize MediaPlayerViewModel", e)
+        }
 
         // On Android 12+ (API 31+), configure auto-enter PiP when video is actively playing
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

@@ -35,6 +35,7 @@ sealed class Screen(val route: String) {
     data object AIImageTools : Screen("ai_image_tools")
     data object GlobalSearch : Screen("global_search")
     data object Tools : Screen("tools")
+    data object ScreenRecorder : Screen("screen_recorder")
     data object VideoCompressor : Screen("video_compressor")
     data object VideoTrimmer : Screen("video_trimmer")
     data object VideoToAudio : Screen("video_to_audio")

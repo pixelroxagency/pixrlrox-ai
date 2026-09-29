@@ -105,7 +105,7 @@ class WeatherRepository(
         results
     }
 
-    private suspend fun getCachedWeather(locationName: String): WeatherData? {
+    suspend fun getCachedWeather(locationName: String): WeatherData? {
         val cache = weatherDao.getWeatherCache(locationName) ?: return null
         return try {
             parseWeatherJson(locationName, cache.jsonPayload, true, cache.timestamp)

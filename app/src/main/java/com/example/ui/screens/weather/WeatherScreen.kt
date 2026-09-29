@@ -33,7 +33,8 @@ fun WeatherScreen(
     }
     val viewModel: WeatherViewModel = viewModel(factory = factory)
     val weather by viewModel.weatherData.collectAsState()
-    val isLoading by viewModel.isLoading.collectAsState()
+    val isInitialLoading by viewModel.isInitialLoading.collectAsState()
+    val isRefreshing by viewModel.isRefreshing.collectAsState()
     val error by viewModel.errorMessage.collectAsState()
     val searchResults by viewModel.searchResults.collectAsState()
     val savedLocation by appLocationRepository.savedLocation.collectAsState()
@@ -70,7 +71,7 @@ fun WeatherScreen(
                 .padding(padding)
                 .padding(16.dp)
         ) {
-            if (isLoading && weather == null) {
+            if (isInitialLoading && weather == null) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             } else if (error != null && weather == null) {
                 Column(

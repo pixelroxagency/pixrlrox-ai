@@ -29,6 +29,7 @@ object ToolCatalog {
             icon = Icons.Default.VideoLibrary,
             tools = listOf(
                 ToolItem("media_gallery", "Media Gallery", "Browse videos, audio and stream channels", Icons.Default.PermMedia, Screen.MediaGallery.route, "media_tools"),
+                ToolItem("media_screen_recorder", "Screen Recorder", "Record screen, device audio and microphone with custom quality and FPS", Icons.Default.FiberSmartRecord, Screen.ScreenRecorder.route, "media_tools"),
                 ToolItem("media_ai_images", "AI Image Tools", "Enhance, generate and process images", Icons.Default.AutoFixHigh, Screen.AIImageTools.route, "media_tools"),
                 ToolItem("media_video_studio", "Video Studio", "Trim, mute, rotate, crop, adjust speed, and extract frames in one studio", Icons.Default.MovieFilter, Screen.VideoStudio.route, "media_tools"),
                 ToolItem("media_audio_studio", "Audio Studio", "Cut, extract from video, convert formats, boost volume, and merge audio in one studio", Icons.Default.GraphicEq, Screen.AudioStudio.route, "media_tools"),

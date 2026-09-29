@@ -37,6 +37,30 @@ class DownloadsViewModel(
     private val preferencesRepository: PreferencesRepository
 ) : ViewModel() {
 
+    val allDownloads: StateFlow<List<DownloadEntity>> = repository.downloads
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    val activeDownloads: StateFlow<List<DownloadEntity>> = repository.activeDownloads
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    val completedDownloads: StateFlow<List<DownloadEntity>> = repository.completedDownloads
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    private val _inputUrl = MutableStateFlow("")
+    val inputUrl: StateFlow<String> = _inputUrl.asStateFlow()
+
+    private val _analysisState = MutableStateFlow<AnalysisState>(AnalysisState.Idle)
+    val analysisState: StateFlow<AnalysisState> = _analysisState.asStateFlow()
+
+    private val _selectedTab = MutableStateFlow(0) // 0: Analyzer, 1: Active, 2: Completed
+    val selectedTab: StateFlow<Int> = _selectedTab.asStateFlow()
+
+    private val _mediaFilterType = MutableStateFlow(MediaType.VIDEO)
+    val mediaFilterType: StateFlow<MediaType> = _mediaFilterType.asStateFlow()
+
+    private val _snackbarMessage = MutableStateFlow<String?>(null)
+    val snackbarMessage: StateFlow<String?> = _snackbarMessage.asStateFlow()
+
     private val _displayProgressMap = MutableStateFlow<Map<String, Int>>(emptyMap())
     val displayProgressMap: StateFlow<Map<String, Int>> = _displayProgressMap.asStateFlow()
 
@@ -158,30 +182,6 @@ class DownloadsViewModel(
             _clipboardPromptUrl.value = null
         }
     }
-
-    val allDownloads: StateFlow<List<DownloadEntity>> = repository.downloads
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
-
-    val activeDownloads: StateFlow<List<DownloadEntity>> = repository.activeDownloads
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
-
-    val completedDownloads: StateFlow<List<DownloadEntity>> = repository.completedDownloads
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
-
-    private val _inputUrl = MutableStateFlow("")
-    val inputUrl: StateFlow<String> = _inputUrl.asStateFlow()
-
-    private val _analysisState = MutableStateFlow<AnalysisState>(AnalysisState.Idle)
-    val analysisState: StateFlow<AnalysisState> = _analysisState.asStateFlow()
-
-    private val _selectedTab = MutableStateFlow(0) // 0: Analyzer, 1: Active, 2: Completed
-    val selectedTab: StateFlow<Int> = _selectedTab.asStateFlow()
-
-    private val _mediaFilterType = MutableStateFlow(MediaType.VIDEO)
-    val mediaFilterType: StateFlow<MediaType> = _mediaFilterType.asStateFlow()
-
-    private val _snackbarMessage = MutableStateFlow<String?>(null)
-    val snackbarMessage: StateFlow<String?> = _snackbarMessage.asStateFlow()
 
     fun onUrlChange(newUrl: String) {
         _inputUrl.value = newUrl

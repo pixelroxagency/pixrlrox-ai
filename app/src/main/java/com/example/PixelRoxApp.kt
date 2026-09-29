@@ -19,22 +19,39 @@ class PixelRoxApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        container = AppContainer(this)
+
         try {
             com.example.core.firebase.FirebaseInitializer.ensureInitialized(this)
-        } catch (e: Exception) {
+        } catch (e: Throwable) {
             android.util.Log.e("PixelRoxApp", "Failed to initialize FirebaseApp", e)
         }
         try {
             com.tom_roush.pdfbox.android.PDFBoxResourceLoader.init(applicationContext)
-        } catch (_: Exception) {}
-        container = AppContainer(this)
-        NotificationChannels.createChannels(this)
+        } catch (_: Throwable) {}
+        try {
+            NotificationChannels.createChannels(this)
+        } catch (e: Throwable) {
+            android.util.Log.e("PixelRoxApp", "Failed to create notification channels", e)
+        }
 
-        com.example.data.downloader.extractor.YtDlpInitializer.registerContext(applicationContext)
+        try {
+            com.example.data.downloader.extractor.YtDlpInitializer.registerContext(applicationContext)
+        } catch (e: Throwable) {
+            android.util.Log.e("PixelRoxApp", "Failed to register YtDlp context", e)
+        }
 
         appScope.launch {
-            com.example.data.downloader.extractor.YtDlpInitializer.prewarm(applicationContext)
-            container.directAiRepository.initialize()
+            try {
+                com.example.data.downloader.extractor.YtDlpInitializer.prewarm(applicationContext)
+            } catch (e: Throwable) {
+                android.util.Log.e("PixelRoxApp", "Failed to prewarm YtDlp", e)
+            }
+            try {
+                container.directAiRepository.initialize()
+            } catch (e: Throwable) {
+                android.util.Log.e("PixelRoxApp", "Failed to initialize DirectAiRepository", e)
+            }
         }
     }
 }

@@ -815,6 +815,11 @@ fun AppNavHost(
                     }
                 )
             }
+            composable(Screen.ScreenRecorder.route) {
+                com.example.ui.screens.video.ScreenRecorderScreen(
+                    onNavigateBack = { navController.popBackStack() }
+                )
+            }
             composable(Screen.AudioStudio.route) {
                 com.example.ui.screens.audio.AudioStudioScreen(
                     onBack = { navController.popBackStack() },

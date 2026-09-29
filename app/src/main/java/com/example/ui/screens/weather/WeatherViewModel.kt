@@ -1,5 +1,6 @@
 package com.example.ui.screens.weather
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.data.repository.WeatherData
@@ -17,8 +18,11 @@ class WeatherViewModel(
     private val _weatherData = MutableStateFlow<WeatherData?>(null)
     val weatherData: StateFlow<WeatherData?> = _weatherData.asStateFlow()
 
-    private val _isLoading = MutableStateFlow(false)
-    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
+    private val _isInitialLoading = MutableStateFlow(false)
+    val isInitialLoading: StateFlow<Boolean> = _isInitialLoading.asStateFlow()
+
+    private val _isRefreshing = MutableStateFlow(false)
+    val isRefreshing: StateFlow<Boolean> = _isRefreshing.asStateFlow()
 
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage.asStateFlow()
@@ -29,6 +33,11 @@ class WeatherViewModel(
     init {
         viewModelScope.launch {
             appLocationRepository.savedLocation.collect { location ->
+                // Show cached weather immediately if available
+                val cached = repository.getCachedWeather(location.displayName)
+                if (cached != null) {
+                    _weatherData.value = cached
+                }
                 loadWeather(location.displayName, location.latitude, location.longitude)
             }
         }
@@ -36,15 +45,25 @@ class WeatherViewModel(
 
     fun loadWeather(locationName: String, lat: Double, lon: Double) {
         viewModelScope.launch {
-            _isLoading.value = true
-            _errorMessage.value = null
+            if (_weatherData.value == null) {
+                _isInitialLoading.value = true
+                _errorMessage.value = null
+            } else {
+                _isRefreshing.value = true
+            }
             try {
                 val data = repository.fetchWeather(locationName, lat, lon)
                 _weatherData.value = data
+                _errorMessage.value = null
             } catch (e: Exception) {
-                _errorMessage.value = e.localizedMessage ?: "Failed to load weather"
+                if (_weatherData.value == null) {
+                    _errorMessage.value = e.localizedMessage ?: "Failed to load weather"
+                } else {
+                    Log.e("WeatherViewModel", "Background refresh failed, keeping stale data", e)
+                }
             } finally {
-                _isLoading.value = false
+                _isInitialLoading.value = false
+                _isRefreshing.value = false
             }
         }
     }

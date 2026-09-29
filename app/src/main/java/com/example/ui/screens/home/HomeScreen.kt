@@ -154,12 +154,16 @@ fun HomeScreen(
         if (weatherRepository != null && appLocationRepository != null) {
             scope.launch {
                 val loc = appLocationRepository.savedLocation.value
-                isWeatherLoading = true
+                if (weatherData == null) {
+                    isWeatherLoading = true
+                }
                 weatherErrorMessage = null
                 try {
                     weatherData = weatherRepository.fetchWeather(loc.displayName, loc.latitude, loc.longitude)
                 } catch (e: Exception) {
-                    weatherErrorMessage = e.localizedMessage ?: "Weather unavailable"
+                    if (weatherData == null) {
+                        weatherErrorMessage = e.localizedMessage ?: "Weather unavailable"
+                    }
                 } finally {
                     isWeatherLoading = false
                 }
@@ -170,12 +174,20 @@ fun HomeScreen(
     androidx.compose.runtime.LaunchedEffect(appLocationRepository, weatherRepository) {
         if (weatherRepository != null && appLocationRepository != null) {
             appLocationRepository.savedLocation.collect { loc ->
-                isWeatherLoading = true
+                val cached = weatherRepository.getCachedWeather(loc.displayName)
+                if (cached != null && weatherData == null) {
+                    weatherData = cached
+                }
+                if (weatherData == null) {
+                    isWeatherLoading = true
+                }
                 weatherErrorMessage = null
                 try {
                     weatherData = weatherRepository.fetchWeather(loc.displayName, loc.latitude, loc.longitude)
                 } catch (e: Exception) {
-                    weatherErrorMessage = e.localizedMessage ?: "Weather unavailable"
+                    if (weatherData == null) {
+                        weatherErrorMessage = e.localizedMessage ?: "Weather unavailable"
+                    }
                 } finally {
                     isWeatherLoading = false
                 }
